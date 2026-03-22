@@ -1,0 +1,26 @@
+# ── Secrets — NEVER commit these ─────────────────────────────────────────────
+.env
+
+# ── Python ────────────────────────────────────────────────────────────────────
+*.pyc
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+
+# ── Raw scraped data (intermediate, can be regenerated) ───────────────────────
+data/raw/
+
+# ── Debug / scratch files ─────────────────────────────────────────────────────
+debug/
+*.html
+test.py
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp

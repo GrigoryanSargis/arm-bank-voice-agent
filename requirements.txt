@@ -1,0 +1,24 @@
+# ── LiveKit open-source agent framework ─────────────────────────────────────
+livekit-agents>=0.12.0
+livekit-plugins-groq>=0.3.0        # STT (Whisper large-v3) + LLM (Llama-3.3-70b)
+livekit-plugins-silero>=0.7.0      # Voice activity detection — lightweight, CPU-friendly
+livekit-plugins-turn-detector>=0.3.0  # Multilingual end-of-turn detection
+
+# ── Free TTS — Microsoft Edge Neural TTS via edge-tts ───────────────────────
+# hy-AM-AnahitNeural = native Armenian female voice, completely free
+edge-tts>=6.1.9
+
+# ── Audio processing (mp3 → PCM for LiveKit) ─────────────────────────────────
+pydub>=0.25.1
+# ffmpeg must be installed on the system (apt install ffmpeg)
+
+# ── Scraping & data pipeline ─────────────────────────────────────────────────
+beautifulsoup4>=4.12
+httpx>=0.27
+lxml>=5.0
+playwright>=1.45          # browser fallback for JS-heavy bank pages
+
+# ── Core ──────────────────────────────────────────────────────────────────────
+pydantic>=2.7
+python-dotenv>=1.0
+groq>=0.9.0               # Groq Python SDK (used for LLM in query_service)

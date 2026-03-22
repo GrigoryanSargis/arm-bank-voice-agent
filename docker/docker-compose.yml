@@ -1,0 +1,21 @@
+version: "3.9"
+
+# Self-hosted LiveKit server — 100% free, open source
+# Docs: https://docs.livekit.io/home/self-hosting/local/
+
+services:
+  livekit:
+    image: livekit/livekit-server:latest
+    command: --dev --bind 0.0.0.0
+    ports:
+      - "7880:7880"     # HTTP/WebSocket API
+      - "7881:7881"     # RTC over TCP
+      - "7882:7882/udp" # RTC over UDP
+    environment:
+      - LIVEKIT_KEYS=devkey:devsecret
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:7880/"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
